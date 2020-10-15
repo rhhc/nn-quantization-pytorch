@@ -84,7 +84,7 @@ class CnnModel(object):
             batch_size=batch_size, shuffle=shuffle,
             num_workers=workers, pin_memory=True)
 
-        self.cal_loader = torch.utils.data.DataLoader(
+        self.cal_loader = torch.utils.data.DataLoader( # TODO: 使用val 来做优化，那么是不是有点问题呢？虽然是post-training的
             val_data,
             batch_size=self.cal_batch_size, shuffle=shuffle,
             num_workers=workers, pin_memory=True)
